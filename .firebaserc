@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "app02-e24eb": {
+      "hosting": {
+        "app": [
+          "app02-e24eb"
+        ]
+      }
+    }
+  }
+}
