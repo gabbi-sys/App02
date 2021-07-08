@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-view',
@@ -19,12 +20,13 @@ export class ViewPage implements OnInit {
   public id: string;
 
   // O artigo completo será armazenado aqui
-  item: Observable<any[]>;
+  item: Observable<any>;
 
   constructor(
     // Injeção de dependências
     public activatedRoute: ActivatedRoute,
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    public auth: AngularFireAuth
   ) { }
 
   ngOnInit() {

@@ -5,7 +5,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-title class="ion-text-center">Artigo</ion-title>
+    <ion-title class="ion-text-center">Entrar / Login</ion-title>
 
     <ion-thumbnail slot="end" *ngIf="auth.user | async as user; else showLogin">
       <img src="{{user.photoURL}}" alt="{{user.displayName}}" routerLink="/profile">
@@ -15,23 +15,19 @@
         <img src="assets/user.png" alt="logue-se" routerLink="/login">
       </ion-thumbnail>
     </ng-template>
-    
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding-horizontal">
 
-  <h2>{{ (item | async)?.title }}</h2>
-  <div class="autor-date">
-    Por {{ (item | async)?.author }} em {{ (item | async)?.date | date: 'dd/MM/yyyy, hh:mm' }}.
+  <div class="header-img">
+    <ion-icon name="log-in-outline"></ion-icon>
   </div>
-  <div [innerHTML]="(item | async)?.text"></div>
-
-  <p>
-    <ion-button expand="block" routerLink="/home">
-      <ion-icon name="home" slot="start"></ion-icon>
-      Voltar para os artigos
-    </ion-button>
-  </p>
+  <p>Logue-se para ter acesso ao nosso conteúdo exclusivo.</p>
+  <ion-button (click)="login()" expand="block" color="secondary">
+    <ion-icon name="logo-google" slot="start"></ion-icon>
+    Entrar com o Google
+  </ion-button>
 
 </ion-content>
