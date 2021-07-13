@@ -27,4 +27,9 @@
 
 ion-toolbar ion-thumbnail {
   margin-right: .5rem;
+  cursor: pointer;
+}
+
+ion-toolbar ion-thumbnail img {
+  border-radius: 50%;
 }
